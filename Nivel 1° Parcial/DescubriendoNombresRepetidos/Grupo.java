@@ -17,9 +17,9 @@ public class Grupo {
 
 	public Grupo(String arch) throws FileNotFoundException {
 		Scanner sc = new Scanner(new File(arch));
-		ninios = new String[sc.nextInt()];
-		nomrepetidos = sc.nextInt();
-		sc.nextLine();
+		String[] aux = sc.nextLine().split(" ");
+		ninios = new String[Integer.parseInt(aux[0])];
+		nomrepetidos = Integer.parseInt(aux[1]);
 		for (int i = 0; i < ninios.length; i++)
 			ninios[i] = sc.nextLine();
 		sc.close();
