@@ -1,0 +1,41 @@
+package paquete;
+
+import java.util.TreeSet;
+
+public class Pais {
+	
+	private String nombre;
+	private TreeSet<String> limitrofes;
+	
+	public Pais(String nombre) {
+		this.limitrofes = new TreeSet<String>();
+		this.nombre = nombre;
+	}
+	
+	public void agregarLimitrofe(String limitrofe) {
+		this.limitrofes.add(limitrofe);
+	}
+	
+	public boolean limitaCon(Pais otro) {
+		return this.limitrofes.contains(otro.getNombre());
+	}
+	
+	public int cantidadLimitrofes() {
+		return this.limitrofes.size();
+	}
+
+	@Override
+	public String toString() {
+		return "Pais [ " + this.nombre + " ]";
+	}
+
+	public void mostrarLimitrofes() {
+		for (String pais : limitrofes) {
+			System.out.println(pais);
+		}
+	}
+	
+	public String getNombre() {
+		return this.nombre;
+	}
+}
